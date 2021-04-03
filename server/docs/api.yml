@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: NodeTS-Sequelize
+  description: Api specifications.
+  version: 1.0.0
+servers:
+  - url: '{base_url}'
+    variables:
+      base_url:
+        description: >-
+          The base URL of the service. If you are running on localhost then it is most likely http://localhost:9095
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      in: header
+      name: Authorization
+      description: 'To access APIs a valid JWT token must be passed in all requests in the Authorization header.'
+tags:
+  - name: Users
+    description: Users Service
+paths:
+  /v1/users:
+    get:
+      $ref: './users/getAll.yml#/getAll'
+    post:
+      $ref: './users/create.yml#/createUser'
+  /v1/users/{userId}:
+    get:
+      $ref: './users/getById.yml#/getById'
+  /v1/spec:
+    get:
+      tags:
+        - Specification
+      responses:
+        200:
+          description: Return the API specification
+          content: {}
