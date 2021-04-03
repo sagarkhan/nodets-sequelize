@@ -26,18 +26,6 @@
 
 - Create Database `example`.
 
-<br>
-<hr>
-
-## Encryption keys (Development Only)
-
-- AES Key (ENCRYPTION_KEY)
-
-`wJ:kP852>UzCXr{,2LRw8Fg+2rf_H]@j`
-
-<br>
-<hr>
-
 ## Setting up environments
 
 - Add a new object in `nodemon.json`
@@ -73,6 +61,7 @@ SESSION_EXPIRY='24h'
 REFRESH_TOKEN_EXPIRY='7d'
 
 HTTPS_ONLY=-0
+AUTH=0
 ```
 
 Note:- Update `DB_USERNAME` & `DB_PASSWORD` with the respective user you created for your database.
@@ -175,7 +164,7 @@ Note:- **Postgres** should be running on the HOST machine.
 
 ## API Documentation
 
-- Open you're browser to `http://localhost:{PORT}/api-explorer/` for API documentation.
+- Open you're browser to `http://localhost:{PORT}/api` for API documentation.
 
 <br>
 <hr>
